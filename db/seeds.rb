@@ -7,8 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Location.destroy_all
+Location.delete_all
 Classroom.delete_all
+Program.delete_all
 
 # Locations
 
@@ -17,9 +18,22 @@ l1 = Location.create!(name: "GA London @ White Bear Yard", city: "London", count
 l2 = Location.create!(name: "GA New York City (West)", city: "New York", country: "USA", full_address: "GA New York City (West), 10 East 21st Street, 4th Floor, New York, 10010")
 
 # Classrooms
+
 3.times do |num|
   Classroom.create!(name: "Room #{num+1}", capacity: 20, location_id: l1.id)
   Classroom.create!(name: "Room #{num+1}", capacity: 15, location_id: l2.id)
 end
+
+# Programs
+
+p1 = Program.create!(name: "Product Management Immersive")
+p2 = Program.create!(name: "Sales & Business Development Immersive")
+p3 = Program.create!(name: "User Experience Design Immersive")
+p4 = Program.create!(name: "Web Development Immersive")
+
+
+
+
+
 
 
