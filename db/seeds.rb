@@ -31,6 +31,8 @@ p2 = Program.create!(name: "Sales & Business Development Immersive")
 p3 = Program.create!(name: "User Experience Design Immersive")
 p4 = Program.create!(name: "Web Development Immersive")
 
+# Courses
+
 
 
 
