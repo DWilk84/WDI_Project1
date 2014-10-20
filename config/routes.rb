@@ -1,4 +1,7 @@
 ScheduleApp::Application.routes.draw do
+  resources :classrooms
+
+
   resources :locations
 
 
