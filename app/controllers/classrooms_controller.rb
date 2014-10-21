@@ -14,7 +14,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms/1.json
   def show
     @classroom = Classroom.find(params[:id])
-
+    calendar_inputs
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @classroom }

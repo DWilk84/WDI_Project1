@@ -1,4 +1,6 @@
 ScheduleApp::Application.routes.draw do
+  match '/bookings(/:year(/:month))' => 'bookings#index', :as => :bookings, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
   resources :courses
   resources :programs
   resources :classrooms

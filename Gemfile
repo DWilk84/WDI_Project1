@@ -7,6 +7,8 @@ gem 'rails', '3.2.19'
 
 gem 'pg'
 
+gem 'event-calendar', :require => 'event_calendar'
+
 group :development do
   gem 'pry-rails'
   gem 'pry-byebug'

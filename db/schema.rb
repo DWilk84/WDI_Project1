@@ -11,22 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141021123810) do
+ActiveRecord::Schema.define(:version => 20141021174942) do
 
   create_table "bookings", :force => true do |t|
+    t.string   "name"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "all_day",      :default => false
+    t.string   "color"
     t.integer  "classroom_id"
     t.integer  "course_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "classrooms", :force => true do |t|
     t.string   "name"
+    t.string   "city"
+    t.string   "country"
     t.integer  "capacity"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "city"
-    t.string   "country"
   end
 
   create_table "courses", :force => true do |t|
@@ -34,9 +39,9 @@ ActiveRecord::Schema.define(:version => 20141021123810) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "program_id"
+    t.integer  "classroom_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "classroom_id"
   end
 
   create_table "programs", :force => true do |t|
