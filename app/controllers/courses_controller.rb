@@ -42,8 +42,15 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(params[:course])
 
+    binding.pry
+
     respond_to do |format|
       if @course.save
+
+        @course.classroom.bookings.create(classroom_id: @course.classroom.id, course_id: @course.id)
+
+
+
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
