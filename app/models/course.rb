@@ -6,4 +6,8 @@ class Course < ActiveRecord::Base
   # has_many :bookings
   # has_many :classrooms, through: :bookings
   # accepts_nested_attributes_for :bookings
+
+  validates :code, presence: true, uniqueness: true
+  
+
 end

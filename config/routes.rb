@@ -1,12 +1,8 @@
 ScheduleApp::Application.routes.draw do
   resources :courses
-
-
   resources :programs
-
-
   resources :classrooms
-
+  root to: "courses#index"
 
   
 

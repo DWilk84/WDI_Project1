@@ -1,15 +1,5 @@
 <%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
-
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= render "shared/error_messages", target: @course %>
 
 <!-- belongs_to :category -->
   <div class="field">
@@ -19,8 +9,8 @@
 
 <!-- course attributes -->
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label :code, "Course code" %><br />
+    <%= f.text_field :code, placeholder: "e.g. WDI-6" %>
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
@@ -33,7 +23,7 @@
 
 <!-- classroom selector (nested attribute through bookings table) -->
   <%= f.label :classroom_id %><br />
-  <%= f.collection_select :classroom_ids, Classroom.order("country ASC"), :id, :cityroom %>
+  <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :city_room %>
 
 
   <div class="actions">
