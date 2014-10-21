@@ -14,10 +14,13 @@ Course.delete_all
 
 # Classrooms
 
-3.times do |num|
-  Classroom.create!(name: "Room #{num+1}", capacity: 20, city: "London", country: "England")
-  Classroom.create!(name: "Room #{num+1}", capacity: 15, city: "New York", country: "USA")
-end
+# 3.times do |num|
+#   Classroom.create!(name: "Room #{num+1}", capacity: 20, city: "London", country: "England")
+#   Classroom.create!(name: "Room #{num+1}", capacity: 15, city: "New York", country: "USA")
+# end
+
+c1 = Classroom.create!(name: "Room 1", capacity: 20, city: "London", country: "England")
+c2 = Classroom.create!(name: "Room 2", capacity: 20, city: "London", country: "England")
 
 # Programs
 
@@ -32,10 +35,10 @@ sd = Date.new(2014, 11, 1)
 ed = sd + 81.days
 
 3.times do |num|
-  Course.create!(name: "PMI-#{num + 1}", start_date: sd >> (num * 12).weeks, end_date: ed >> (num * 12).weeks, program_id: p1.id)
-  Course.create!(name: "SBDI-#{num + 1}", start_date: sd >> (num * 12).weeks, end_date: ed >> (num * 12).weeks, program_id: p2.id)
-  Course.create!(name: "UXDI-#{num + 1}", start_date: sd >> (num * 12).weeks, end_date: ed >> (num * 12).weeks, program_id: p3.id)
-  Course.create!(name: "WDI-#{num + 1}", start_date: sd >> (num * 12).weeks, end_date: ed >> (num * 12).weeks, program_id: p4.id)
+  Course.create!(code: "PMI-#{num + 1}", start_date: sd + (num * 12).weeks, end_date: ed + (num * 12).weeks, program_id: p1.id, classroom_id: c1.id)
+  Course.create!(code: "SBDI-#{num + 1}", start_date: sd + (num * 12).weeks, end_date: ed + (num * 12).weeks, program_id: p2.id, classroom_id: c1.id)
+  Course.create!(code: "UXDI-#{num + 1}", start_date: sd + (num * 12).weeks, end_date: ed + (num * 12).weeks, program_id: p3.id, classroom_id: c2.id)
+  Course.create!(code: "WDI-#{num + 1}", start_date: sd + (num * 12).weeks, end_date: ed + (num * 12).weeks, program_id: p4.id, classroom_id: c2.id)
 end
 
 

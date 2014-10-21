@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @course.name %>
+  <b>Program:</b>
+  <%= @course.program.name %>
+</p>
+
+<p>
+  <b>Course code:</b>
+  <%= @course.code %>
 </p>
 
 <p>
@@ -16,9 +21,11 @@
 </p>
 
 <p>
-  <b>Program:</b>
-  <%= @course.program_id %>
+  <b>City:</b>
+  <%= @course.classroom.city %>
 </p>
+
+
 
 
 <%= link_to 'Edit', edit_course_path(@course) %> |

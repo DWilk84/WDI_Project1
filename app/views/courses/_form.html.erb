@@ -14,7 +14,7 @@
 <!-- belongs_to :category -->
   <div class="field">
     <%= f.label :program_id %><br />
-    <%= f.collection_select :program_id, Program.all, :id, :name %>
+    <%= f.collection_select :program_id, Program.order("name ASC"), :id, :name %>
   </div>
 
 <!-- course attributes -->
@@ -33,7 +33,7 @@
 
 <!-- classroom selector (nested attribute through bookings table) -->
   <%= f.label :classroom_id %><br />
-  <%= f.collection_select :classroom_ids, Classroom.all, :id, :name %>
+  <%= f.collection_select :classroom_ids, Classroom.order("country ASC"), :id, :cityroom %>
 
 
   <div class="actions">

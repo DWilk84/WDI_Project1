@@ -2,10 +2,11 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Program</th>
+    <th>Course Code</th>
     <th>Start date</th>
     <th>End date</th>
-    <th>Program</th>
+    <th>City</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,10 +14,11 @@
 
 <% @courses.each do |course| %>
   <tr>
-    <td><%= course.name %></td>
+    <td><%= course.program.name %></td>
+    <td><%= course.code %></td>
     <td><%= course.start_date %></td>
     <td><%= course.end_date %></td>
-    <td><%= course.program_id %></td>
+    <td><%= course.classroom.city %></td>
     <td><%= link_to 'Show', course %></td>
     <td><%= link_to 'Edit', edit_course_path(course) %></td>
     <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
