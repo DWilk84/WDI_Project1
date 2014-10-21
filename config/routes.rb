@@ -8,7 +8,7 @@ ScheduleApp::Application.routes.draw do
   resources :classrooms
 
 
-  resources :locations
+  
 
 
   # The priority is based upon order of creation:

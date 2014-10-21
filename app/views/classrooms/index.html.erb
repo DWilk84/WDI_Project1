@@ -4,7 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Capacity</th>
-    <th>Location</th>
+    <th>Country</th>
+    <th>City</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +15,8 @@
   <tr>
     <td><%= classroom.name %></td>
     <td><%= classroom.capacity %></td>
-    <td><%= classroom.location_id %></td>
+    <td><%= classroom.country %></td>
+    <td><%= classroom.city %></td>
     <td><%= link_to 'Show', classroom %></td>
     <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
     <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>

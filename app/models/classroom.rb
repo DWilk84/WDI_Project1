@@ -1,7 +1,7 @@
 class Classroom < ActiveRecord::Base
-  attr_accessible :capacity, :location_id, :name
+  attr_accessible :capacity, :name, :city, :country
 
-  belongs_to :location
+  
   has_many :bookings
   has_many :courses, through: :bookings
 end
