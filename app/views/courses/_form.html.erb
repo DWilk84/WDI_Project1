@@ -1,13 +1,13 @@
 <%= form_for(@course) do |f| %>
-<%= render "shared/error_messages", target: @course %>
+  <%= render "shared/error_messages", target: @course %>
 
-<!-- belongs_to :category -->
+  <!-- belongs_to :category -->
   <div class="field">
     <%= f.label :program_id %><br />
     <%= f.collection_select :program_id, Program.order("name ASC"), :id, :name %>
   </div>
 
-<!-- course attributes -->
+  <!-- course attributes -->
   <div class="field">
     <%= f.label :code, "Course code" %><br />
     <%= f.text_field :code, placeholder: "e.g. WDI-6" %>
@@ -21,11 +21,15 @@
     <%= f.date_select :end_date %>
   </div>
 
-<!-- classroom selector (nested attribute through bookings table) -->
-  <%= f.label :classroom_id %><br />
-  <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :city_room %>
-
-
+  <!-- fields needed to create booking  -->
+  <div>
+    <%= f.label :classroom_id %><br />
+    <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :city_room %>
+  </div>
+  <div>
+    <%= f.label :color, "Select color for calendar entry:" %><br />
+    <%= f.select(:color, [['red', 'red'],['blue', 'blue'],['green', 'green']]) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

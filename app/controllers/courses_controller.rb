@@ -47,9 +47,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
 
-        @course.booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red")
-
-
+        @course.booking = Booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color)
 
 
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -69,7 +67,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.update_attributes(params[:course])
 
-       @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red")
+       @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red", color: @course.color)
 
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { head :no_content }

@@ -6,6 +6,7 @@ class CreateCourses < ActiveRecord::Migration
       t.date :end_date
       t.integer :program_id
       t.integer :classroom_id
+      t.string :color
 
       t.timestamps
     end

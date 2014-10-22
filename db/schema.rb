@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20141021174942) do
     t.date     "end_date"
     t.integer  "program_id"
     t.integer  "classroom_id"
+    t.string   "color"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
