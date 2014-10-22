@@ -62,7 +62,6 @@ class CoursesController < ApplicationController
   # PUT /courses/1.json
   def update
     @course = Course.find(params[:id])
-    binding.pry
     @course.color = @course.program.color
     @course.code = @course.course_code(@course)
 

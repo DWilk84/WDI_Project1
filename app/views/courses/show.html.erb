@@ -25,6 +25,24 @@
   <%= @course.classroom.city %>
 </p>
 
+<!-- course application button -->
+
+
+
+<!-- the following to be seen by admins only  -->
+
+<p>
+  <b>Max number of course participants:</b>
+  <%= @course.classroom.capacity %>
+</p>
+
+<p>
+  <b>Applicants:</b>
+  <% @course.admissions.each do |admission| %>
+    <li><%= "#{admission.user.email}, status: #{admission.status} " %></li>
+  <% end %>
+</p>
+
 
 
 

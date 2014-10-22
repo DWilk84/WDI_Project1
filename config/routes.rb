@@ -11,7 +11,7 @@ ScheduleApp::Application.routes.draw do
   resources :users
   resources :sessions
 
-  root to: "sessions#new"
+  root to: "courses#index"
 
   
 
