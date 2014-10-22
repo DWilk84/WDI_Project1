@@ -3,7 +3,7 @@ class Classroom < ActiveRecord::Base
   has_event_calendar
   has_many :courses
   has_many :bookings, dependent: :destroy
-  # has_many :courses, through: :bookings
+
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :capacity, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}

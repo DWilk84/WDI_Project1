@@ -26,10 +26,7 @@
     <%= f.label :classroom_id %><br />
     <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :city_room %>
   </div>
-  <div>
-    <%= f.label :color, "Select color for calendar entry:" %><br />
-    <%= f.select(:color, [['red', 'red'],['blue', 'blue'],['green', 'green']]) %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

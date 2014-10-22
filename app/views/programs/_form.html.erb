@@ -1,10 +1,16 @@
 <%= form_for(@program) do |f| %>
-<%= render "shared/error_messages", target: @program %>
+  <%= render "shared/error_messages", target: @program %>
 
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <div>
+    <%= f.label :color, "Select color for calendar entry:" %><br />
+    <%= f.select(:color, [['red', 'red'],['blue', 'blue'],['green', 'green'],['orange', 'orange'],['black', 'black'],['grey', 'grey']]) %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

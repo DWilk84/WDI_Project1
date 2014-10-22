@@ -13,20 +13,20 @@ r3 = Classroom.create!(name: "White Room", capacity: 15, city: "New York", count
 
 # Programs
 
-p1 = Program.create!(name: "Product Management Immersive")
-p2 = Program.create!(name: "Sales & Business Development Immersive")
-p3 = Program.create!(name: "User Experience Design Immersive")
-p4 = Program.create!(name: "Web Development Immersive")
+p1 = Program.create!(name: "Product Management Immersive", color: "red")
+p2 = Program.create!(name: "Sales & Business Development Immersive", color: "blue")
+p3 = Program.create!(name: "User Experience Design Immersive", color: "green")
+p4 = Program.create!(name: "Web Development Immersive", color: "orange")
 
 # Courses
 
 sd = Date.new(2014, 10, 6)
 ed = sd + 81.days
 
-c1 = Course.create!(code: "PMI-1", start_date: sd, end_date: ed, program_id: p1.id, classroom_id: r1.id, color: "red")
-c2 = Course.create!(code: "SBDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p2.id, classroom_id: r1.id, color: "blue")
-c3 = Course.create!(code: "UXDI-1", start_date: sd, end_date: ed, program_id: p3.id, classroom_id: r2.id, color: "green")
-c4 = Course.create!(code: "WDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p4.id, classroom_id: r3.id, color: "orange")
+c1 = Course.create!(code: "PMI-1", start_date: sd, end_date: ed, program_id: p1.id, classroom_id: r1.id, color: p1.color)
+c2 = Course.create!(code: "SBDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p2.id, classroom_id: r1.id, color: p2.color)
+c3 = Course.create!(code: "UXDI-1", start_date: sd, end_date: ed, program_id: p3.id, classroom_id: r2.id, color: p3.color)
+c4 = Course.create!(code: "WDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p4.id, classroom_id: r3.id, color: p4.color)
 
 # Bookings
 

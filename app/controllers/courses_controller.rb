@@ -42,6 +42,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(params[:course])
 
+    @course.color = @course.program.color 
     # binding.pry
 
     respond_to do |format|
