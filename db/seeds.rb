@@ -21,7 +21,7 @@ p4 = Program.create!(name: "Web Development Immersive")
 
 # Courses
 
-sd = Date.new(2014, 11, 1)
+sd = Date.new(2014, 10, 6)
 ed = sd + 81.days
 
 # 3.times do |num|
@@ -31,10 +31,10 @@ ed = sd + 81.days
 #   Course.create!(code: "WDI-#{num + 1}", start_date: sd + (num * 12).weeks, end_date: ed + (num * 12).weeks, program_id: p4.id, classroom_id: c2.id)
 # end
 
-c1 = Course.create!(code: "PMI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p1.id, classroom_id: r1.id)
-c2 = Course.create!(code: "SBDI-1", start_date: sd + 18.weeks, end_date: ed + 18.weeks, program_id: p2.id, classroom_id: r1.id)
-c3 = Course.create!(code: "UXDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p3.id, classroom_id: r2.id)
-c4 = Course.create!(code: "WDI-1", start_date: sd + 18.weeks, end_date: ed + 18.weeks, program_id: p4.id, classroom_id: r2.id)
+c1 = Course.create!(code: "PMI-1", start_date: sd, end_date: ed, program_id: p1.id, classroom_id: r1.id)
+c2 = Course.create!(code: "SBDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p2.id, classroom_id: r1.id)
+c3 = Course.create!(code: "UXDI-1", start_date: sd, end_date: ed, program_id: p3.id, classroom_id: r2.id)
+c4 = Course.create!(code: "WDI-1", start_date: sd + 12.weeks, end_date: ed + 12.weeks, program_id: p4.id, classroom_id: r2.id)
 
 # Bookings
 
