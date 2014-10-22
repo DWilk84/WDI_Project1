@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.order(:program_id, :start_date, :code, )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,12 +42,13 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(params[:course])
 
-    binding.pry
+    # binding.pry
 
     respond_to do |format|
       if @course.save
 
-        @course.classroom.bookings.create(classroom_id: @course.classroom.id, course_id: @course.id)
+        @course.booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red")
+
 
 
 
@@ -67,6 +68,9 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
+
+       @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red")
+
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { head :no_content }
       else

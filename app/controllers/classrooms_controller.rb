@@ -3,6 +3,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms.json
   def index
     @classrooms = Classroom.all
+    # could order the results here
     calendar_inputs
     respond_to do |format|
       format.html # index.html.erb
