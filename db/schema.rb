@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20141022110418) do
   create_table "programs", :force => true do |t|
     t.string   "name"
     t.string   "color"
+    t.string   "code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

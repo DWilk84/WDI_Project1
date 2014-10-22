@@ -41,15 +41,13 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(params[:course])
-
-    @course.color = @course.program.color 
-    # binding.pry
+    @course.color = @course.program.color
+    @course.code = @course.course_code(@course)
 
     respond_to do |format|
       if @course.save
 
         @course.booking = Booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color)
-
 
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
@@ -64,11 +62,14 @@ class CoursesController < ApplicationController
   # PUT /courses/1.json
   def update
     @course = Course.find(params[:id])
+    binding.pry
+    @course.color = @course.program.color
+    @course.code = @course.course_code(@course)
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
 
-       @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: "red", color: @course.color)
+       @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color))
 
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { head :no_content }

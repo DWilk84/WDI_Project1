@@ -9,6 +9,10 @@ class Course < ActiveRecord::Base
   # has_many :classrooms, through: :bookings
   # accepts_nested_attributes_for :booking
 
-  validates :code, presence: true, uniqueness: true
+  # validates :code, presence: true, uniqueness: true
+
+  def course_code(course)
+    "#{course.program.code}-#{Course.where(program_id: program_id).count + 1 }"
+  end
 
 end

@@ -10,10 +10,10 @@ r3 = Classroom.create!(name: "New York: Room 1", capacity: 15, city: "New York",
 
 # Programs
 
-p1 = Program.create!(name: "Product Management Immersive", color: "red")
-p2 = Program.create!(name: "Sales & Business Development Immersive", color: "blue")
-p3 = Program.create!(name: "User Experience Design Immersive", color: "green")
-p4 = Program.create!(name: "Web Development Immersive", color: "orange")
+p1 = Program.create!(name: "Product Management Immersive", color: "red", code: "PMI")
+p2 = Program.create!(name: "Sales & Business Development Immersive", color: "blue", code: "SBDI")
+p3 = Program.create!(name: "User Experience Design Immersive", color: "green", code: "UXDI")
+p4 = Program.create!(name: "Web Development Immersive", color: "orange", code: "WDI")
 
 # Courses
 

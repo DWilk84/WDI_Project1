@@ -3,6 +3,7 @@ class CreatePrograms < ActiveRecord::Migration
     create_table :programs do |t|
       t.string :name
       t.string :color
+      t.string :code
 
       t.timestamps
     end
