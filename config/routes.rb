@@ -1,11 +1,17 @@
 ScheduleApp::Application.routes.draw do
   match '/bookings(/:year(/:month))' => 'bookings#index', :as => :bookings, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
+  get "log_out" => "sessions#destroy", as: "log_out"
+  get "log_in" => "sessions#new", as: "log_in"
+  get "sign_up" => "users#new", as: "sign_up"
+
   resources :courses
   resources :programs
   resources :classrooms
   resources :users
-  root to: "users#index"
+  resources :sessions
+
+  root to: "sessions#new"
 
   
 
