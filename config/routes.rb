@@ -4,7 +4,8 @@ ScheduleApp::Application.routes.draw do
   resources :courses
   resources :programs
   resources :classrooms
-  root to: "courses#index"
+  resources :users
+  root to: "users#index"
 
   
 

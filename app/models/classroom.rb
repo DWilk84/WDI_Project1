@@ -4,7 +4,7 @@ class Classroom < ActiveRecord::Base
   has_many :courses
   has_many :bookings, dependent: :destroy
 
-
+  before_save :ensure_uniqueness_of_city_room
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :capacity, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :city, presence: true
@@ -16,4 +16,16 @@ class Classroom < ActiveRecord::Base
   def city_room
     "#{city} - #{name}"
   end
+
+  def ensure_uniqueness_of_city_room
+    # iterate over all the records,
+    # dynamically create the value of city_room 
+    # and push it inside an array,
+    # for each record, make sure that the value of the current city room doesnt already exists in the array,
+    # if it does, then update one of the fields, (city or name)
+    # or add an error to self.errors[:base]
+  end
+
+  
+  
 end

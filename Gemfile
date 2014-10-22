@@ -9,6 +9,8 @@ gem 'pg'
 
 gem 'event-calendar', :require => 'event_calendar'
 
+gem 'bcrypt-ruby', '~> 3.0.0'
+
 group :development do
   gem 'pry-rails'
   gem 'pry-byebug'
