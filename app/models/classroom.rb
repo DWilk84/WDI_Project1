@@ -4,8 +4,8 @@ class Classroom < ActiveRecord::Base
   has_many :courses
   has_many :bookings, dependent: :destroy
 
-  before_save :ensure_uniqueness_of_city_room
-  validates :name, presence: true, uniqueness: {case_sensitive: false}
+  # before_save :ensure_uniqueness_of_city_room
+  # validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :capacity, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :city, presence: true
   validates :country, presence: true
@@ -13,9 +13,9 @@ class Classroom < ActiveRecord::Base
   scope :created_today, where("classroom.bookings.start_at >= :start_date AND end_at <= :end_date",
   {start_date: Time.now.midnight - 1.days, end_date: Time.now.midnight})
 
-  def city_room
-    "#{city} - #{name}"
-  end
+  # def city_room
+  #   "#{city} - #{name}"
+  # end
 
   def ensure_uniqueness_of_city_room
     # iterate over all the records,
@@ -26,6 +26,9 @@ class Classroom < ActiveRecord::Base
     # or add an error to self.errors[:base]
   end
 
+  def room_name(city)
+    "#{city}: Room #{Classroom.where(city: city).count + 1 }"
+  end
   
   
 end

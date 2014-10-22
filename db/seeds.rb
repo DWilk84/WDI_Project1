@@ -4,12 +4,9 @@ Course.delete_all
 
 # Classrooms
 
-#   Classroom.create!(name: "Room #{num+1}", capacity: 15, city: "New York", country: "USA")
-
-
-r1 = Classroom.create!(name: "Room 1", capacity: 20, city: "London", country: "England")
-r2 = Classroom.create!(name: "Room 2", capacity: 20, city: "London", country: "England")
-r3 = Classroom.create!(name: "White Room", capacity: 15, city: "New York", country: "USA")
+r1 = Classroom.create!(name: "London: Room 1", capacity: 20, city: "London", country: "England")
+r2 = Classroom.create!(name: "Berlin: Room 2", capacity: 20, city: "Berlin", country: "Germany")
+r3 = Classroom.create!(name: "New York: Room 1", capacity: 15, city: "New York", country: "USA")
 
 # Programs
 

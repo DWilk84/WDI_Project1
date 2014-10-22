@@ -24,7 +24,7 @@
   <!-- fields needed to create booking  -->
   <div>
     <%= f.label :classroom_id %><br />
-    <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :city_room %>
+    <%= f.collection_select :classroom_id, Classroom.order("country ASC"), :id, :name %>
   </div>
 
   <div class="actions">

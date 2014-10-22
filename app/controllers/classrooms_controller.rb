@@ -42,6 +42,7 @@ class ClassroomsController < ApplicationController
   # POST /classrooms.json
   def create
     @classroom = Classroom.new(params[:classroom])
+    @classroom.name = @classroom.room_name(@classroom.city)
 
     respond_to do |format|
       if @classroom.save
