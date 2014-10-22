@@ -3,7 +3,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms.json
   def index
     @classrooms = Classroom.all
-
+    calendar_inputs
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @classrooms }

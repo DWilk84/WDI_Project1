@@ -4,17 +4,18 @@
   <title>ScheduleApp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "event_calendar" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+  <nav>
+    <%= link_to "Courses", courses_path  %>
+    <%= link_to "Programs", programs_path  %>
+    <%= link_to "Classrooms", classrooms_path  %>
+  </nav>
 
-<nav>
-  <%= link_to "Courses", courses_path  %>
-  <%= link_to "Programs", programs_path  %>
-  <%= link_to "Classrooms", classrooms_path  %>
-</nav>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
