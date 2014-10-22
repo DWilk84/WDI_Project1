@@ -1,4 +1,10 @@
 ScheduleApp::Application.routes.draw do
+  get "admissions/new"
+
+  post "admissions/create"
+
+  get "admissions/destroy"
+
   match '/bookings(/:year(/:month))' => 'bookings#index', :as => :bookings, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   get "log_out" => "sessions#destroy", as: "log_out"

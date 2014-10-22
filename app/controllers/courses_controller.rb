@@ -14,7 +14,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
+    @admission = Admission.new()
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @course }
@@ -89,5 +89,9 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url }
       format.json { head :no_content }
     end
+  end
+
+  def apply_for_course
+
   end
 end

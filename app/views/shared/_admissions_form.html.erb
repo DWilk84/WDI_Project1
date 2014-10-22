@@ -1,0 +1,8 @@
+<%= form_for @admission, url: admissions_create_path do |f| %>
+  <div class="hidden">
+    <%= f.label :course_id, "Select course" %>
+    <%= f.collection_select :course_id, Course.all, :id, :code, selected: @course.id %>
+  </div>
+  <%= f.submit %>
+
+<% end %>
