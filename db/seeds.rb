@@ -32,4 +32,26 @@ c2.classroom.bookings.create!(name: c2.code,classroom_id: c2.classroom.id, cours
 c3.classroom.bookings.create!(name: c3.code,classroom_id: c3.classroom.id, course_id: c3.id, start_at: c3.start_date, end_at: c3.end_date, color: c3.color)
 c4.classroom.bookings.create!(name: c4.code,classroom_id: c4.classroom.id, course_id: c4.id, start_at: c4.start_date, end_at: c4.end_date, color: c4.color)
 
+u1 = User.create!(email: "Bob@email.com", password: "password", password_confirmation: "password" )
+u2 = User.create!(email: "Bill@email.com", password: "password", password_confirmation: "password" )
+u3 = User.create!(email: "Jeff@email.com", password: "password", password_confirmation: "password" )
+u4 = User.create!(email: "Joe@email.com", password: "password", password_confirmation: "password" )
+u5 = User.create!(email: "Sam@email.com", password: "password", password_confirmation: "password" )
+u6 = User.create!(email: "Anna@email.com", password: "password", password_confirmation: "password" )
+u7 = User.create!(email: "Tim@email.com", password: "password", password_confirmation: "password" )
+u8 = User.create!(email: "Andy@email.com", password: "password", password_confirmation: "password" )
+u9 = User.create!(email: "Hannah@email.com", password: "password", password_confirmation: "password" )
+u10 = User.create!(email: "Tarquin@email.com", password: "password", password_confirmation: "password" )
+
+
+u1.courses << c1 << c2
+u2.courses << c1 << c2
+u3.courses << c1 << c2
+u4.courses << c1 << c2
+u5.courses << c1 << c2
+u6.courses << c3 << c4
+u7.courses << c3 << c4
+u8.courses << c3 << c4
+u9.courses << c3 << c4
+u10.courses << c3 << c4
 

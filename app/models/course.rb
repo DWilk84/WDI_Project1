@@ -1,15 +1,10 @@
 class Course < ActiveRecord::Base
-  attr_accessible :code, :start_date, :end_date, :program_id, :classroom_id, :color #, :bookings_attributes, :classroom_ids
+  attr_accessible :code, :start_date, :end_date, :program_id, :classroom_id, :color, :user_ids
 
   belongs_to :program
   belongs_to :classroom
   has_one :booking, dependent: :destroy
-
-  # has_many :bookings
-  # has_many :classrooms, through: :bookings
-  # accepts_nested_attributes_for :booking
-
-  # validates :code, presence: true, uniqueness: true
+  has_and_belongs_to_many :users
 
   def course_code(course)
     "#{course.program.code}-#{Course.where(program_id: program_id).count + 1 }"
