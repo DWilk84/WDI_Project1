@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :course_ids, :user_image, :role #role for seeding only!! hash out once seeded! 
+  attr_accessible :email, :password, :password_confirmation, :course_ids, :user_image, :remote_user_image_url, :role #role for seeding only!! hash out once seeded! 
 
   has_secure_password
 

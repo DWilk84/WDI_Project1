@@ -14,8 +14,12 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
-    <%= f.label :user_image %><br />
+    <%= f.label :user_image, "Upload a profile picture form your computer..." %>
     <%= f.file_field :user_image %>
+    <br /><br />
+    <%= f.label :remote_user_image_url, "...or from the web..." %>
+    <%= f.text_field :remote_user_image_url %>
+
   </div>
 
   <div class="actions">

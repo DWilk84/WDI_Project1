@@ -30,3 +30,10 @@ $(function () {
 $(function() {
   $('.datepicker').datepicker();
 });
+
+// $( document ).click(function() {
+//   $( "#home_logo" ).toggle( "explode" );
+//   // function() {
+//   //   window.location = "home_path";
+//   // };
+// });

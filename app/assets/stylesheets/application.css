@@ -15,6 +15,112 @@
  *= require jquery-ui
  */
 
- #calendar_container{
+.flash-message{
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.flash-message-notice{
+  background-color: #ADFFAD;
+  color: #79B279;
+}
+
+.flash-message-error{
+  background-color: #FF9494;
+  color: #E62E2E;
+}
+.flash-message-alert{
+  background-color: #FF9494;
+  color: #E62E2E;
+}
+
+a{
+  text-decoration: none;
+  -webkit-transition: background-color 0.5s linear 0s;
+}
+
+#user_nav{
+  height: 60px;
+  background-color: black;
+  margin: 0 auto;
+  color: white;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#user_nav_left{
+  height: 58px;
+  width: 47%;
+  display: inline-block;
+  text-align: left;
+  line-height: 60px;
+  vertical-align: top;
+}
+
+#user_nav_left p{
   width: 50%;
- }
+  display: inline-block;
+  text-align: left;
+  line-height: 60px;
+  margin: 0 auto;
+  vertical-align: top
+}
+
+#user_nav_right{
+  height: 58px;
+  width: 47%;
+  display: inline-block;
+  text-align: right;
+  line-height: 60px;
+  vertical-align: top;
+}
+
+#user_nav a{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+/* unvisited link */
+#user_nav a:link {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+/* visited link */
+#user_nav a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+/* mouse over link */
+#user_nav a:hover {
+  color: #000000;
+  text-decoration: none;
+  background-color: #FFFFFF;
+}
+
+/* selected link */
+#user_nav a:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+
+
+#user_thumb{
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 3px;
+}
+
+#calendar_container{
+  width: 50%;
+}
