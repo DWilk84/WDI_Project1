@@ -46,9 +46,7 @@
   </p>
 <% end %>
 
-
-
-
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
+<% if can? :update, Course %>
+  <%= link_to 'Edit', edit_course_path(@course) %> |  
+<% end %>
 <%= link_to 'Back', courses_path %>

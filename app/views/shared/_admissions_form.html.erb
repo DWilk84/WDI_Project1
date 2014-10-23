@@ -3,6 +3,6 @@
     <%= f.label :course_id, "Select course" %>
     <%= f.collection_select :course_id, Course.all, :id, :code, selected: @course.id %>
   </div>
-  <%= f.submit %>
+  <%= f.submit "Apply to this course!" %>
 
 <% end %>

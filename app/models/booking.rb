@@ -8,8 +8,8 @@ class Booking < ActiveRecord::Base
 
   # scope :booked, where("bookings.created_at >= :start_date AND created_at <= :end_date", {start_date: params[:start_date], end_date: params[:end_date]})
 
-  scope :booked, where("bookings.start_at >= :start_date AND end_at <= :end_date",
-  {start_date: Date.new(2015), end_date: Date.new(2015, 5)})
+  # scope :booked, where("bookings.start_at >= :start_date AND end_at <= :end_date",
+  # {start_date: Date.new(2015), end_date: Date.new(2015, 5)})
 
 
 end

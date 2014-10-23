@@ -22,7 +22,7 @@ module BookingsHelper
       event, day = args[:event], args[:day]
       html = %(<a href="/courses/#{event.course_id}" title="#{h(event.name)}">)
       html << display_event_time(event, day)
-      html << %(#{h(event.name)}</a>)
+      html << %( - #{h(event.name)} - #{h(event.classroom.city)}</a>)
       html
     end
   end

@@ -12,7 +12,9 @@ gem 'event-calendar', :require => 'event_calendar'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancancan', '~> 1.9'
 
+
 group :development do
+  gem 'letter_opener'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'better_errors'

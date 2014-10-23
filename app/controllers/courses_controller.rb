@@ -5,8 +5,12 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.order(:program_id, :start_date, :code )
-
+    @cities = Course.cities
+    @courses = Course.upcoming_courses
+    @upcoming_courses = Course.upcoming_courses
+    @ongoing_courses = Course.ongoing_courses
+    @completed_courses = Course.completed_courses
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
