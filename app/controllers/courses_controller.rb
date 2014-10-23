@@ -6,11 +6,11 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @cities = Course.cities
-    @courses = Course.upcoming_courses
+    @courses = Course.all
     @upcoming_courses = Course.upcoming_courses
     @ongoing_courses = Course.ongoing_courses
     @completed_courses = Course.completed_courses
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }

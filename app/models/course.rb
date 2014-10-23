@@ -14,7 +14,7 @@ class Course < ActiveRecord::Base
     "#{course.program.code}-#{Course.where(program_id: program_id).count + 1 }"
   end
 
-  # doesn't work!!
+  # this one doesn't work!!
   # scope :overlapping, lambda { |course| {
     # :conditions => ["id <> ? AND (DATEDIFF(start_date, ?) * DATEDIFF(?, end_date)) >= 0", course.id, course.end_date, course.start_date]
     # }}
