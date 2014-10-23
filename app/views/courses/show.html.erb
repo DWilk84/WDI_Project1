@@ -25,24 +25,27 @@
   <%= @course.classroom.city %>
 </p>
 
-<!-- course application button -->
+<% if can? :create, Admission %>
+  <!-- course application button -->
+  <%= render 'shared/admissions_form' %>  
+<% end %>
 
-<%= render 'shared/admissions_form' %>
-  
 
-<!-- the following to be seen by admins only  -->
+<% if can? :update, Admission %>
+  <!-- the following to be seen by admins only  -->
+  <p>
+    <b>Max number of course participants:</b>
+    <%= @course.classroom.capacity %>
+  </p>
 
-<p>
-  <b>Max number of course participants:</b>
-  <%= @course.classroom.capacity %>
-</p>
+  <p>
+    <b>Applicants:</b>
+    <% @course.admissions.each do |admission| %>
+      <li><%= "#{admission.user.email}, status: #{admission.status} " %></li>
+    <% end %>
+  </p>
+<% end %>
 
-<p>
-  <b>Applicants:</b>
-  <% @course.admissions.each do |admission| %>
-    <li><%= "#{admission.user.email}, status: #{admission.status} " %></li>
-  <% end %>
-</p>
 
 
 

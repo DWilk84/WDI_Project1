@@ -11,23 +11,27 @@
     <th></th>
   </tr>
 
-<% @classrooms.each do |classroom| %>
+  <% @classrooms.each do |classroom| %>
   <tr>
     <td><%= classroom.name %></td>
     <td><%= classroom.capacity %></td>
     <td><%= classroom.country %></td>
     <td><%= classroom.city %></td>
     <td><%= link_to 'Show', classroom %></td>
-    <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-    <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if can? :update, Classroom %>
+      <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
+    <% end %>
+    <% if can? :destroy, Classroom %>
+      <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
-<% end %>
+  <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Classroom', new_classroom_path %>
-
+<% if can? :create, Classroom %>
+  <%= link_to 'New Classroom', new_classroom_path %>
+<% end %>
 
 <div id="calendar_container">
   <h1>Calendar</h1>

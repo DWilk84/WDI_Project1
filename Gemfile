@@ -10,6 +10,7 @@ gem 'pg'
 gem 'event-calendar', :require => 'event_calendar'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cancancan', '~> 1.9'
 
 group :development do
   gem 'pry-rails'

@@ -9,17 +9,23 @@
     <th></th>
   </tr>
 
-<% @programs.each do |program| %>
-  <tr>
-    <td><%= program.name %></td>
-    <td><%= program.code %></td>
-    <td><%= link_to 'Show', program %></td>
-    <td><%= link_to 'Edit', edit_program_path(program) %></td>
-    <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @programs.each do |program| %>
+    <tr>
+      <td><%= program.name %></td>
+      <td><%= program.code %></td>
+      <td><%= link_to 'Show', program %></td>
+      <% if can? :update, Program %>
+        <td><%= link_to 'Edit', edit_program_path(program) %></td>  
+      <% end %>
+      <% if can? :destroy, Program %>
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <% end %>
+    </tr>
+  <% end %>
 </table>
 
 <br />
+<% if can? :create, Program %>
+  <%= link_to 'New Program', new_program_path %>  
+<% end %>
 
-<%= link_to 'New Program', new_program_path %>

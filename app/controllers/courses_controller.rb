@@ -1,8 +1,11 @@
 class CoursesController < ApplicationController
+
+  authorize_resource
+  
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.order(:program_id, :start_date, :code, )
+    @courses = Course.order(:program_id, :start_date, :code )
 
     respond_to do |format|
       format.html # index.html.erb

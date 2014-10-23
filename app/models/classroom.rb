@@ -13,10 +13,6 @@ class Classroom < ActiveRecord::Base
   scope :created_today, where("classroom.bookings.start_at >= :start_date AND end_at <= :end_date",
   {start_date: Time.now.midnight - 1.days, end_date: Time.now.midnight})
 
-  # def city_room
-  #   "#{city} - #{name}"
-  # end
-
   def ensure_uniqueness_of_city_room
     # iterate over all the records,
     # dynamically create the value of city_room 

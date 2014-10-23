@@ -6,9 +6,27 @@
 </p>
 
 <p>
-  <b>Password digest:</b>
-  <%= @user.password_digest %>
+  <b>Role:</b>
+  <%= @user.role %>
 </p>
+
+<table>
+  <tr>
+    <th>Courses</th>
+    <th>Status</th>
+  </tr>
+  <% @user.admissions.each do |admission| %>
+  <tr>
+    <td>
+      <%= admission.course.code %>
+    </td>
+    <td>
+      <%= admission.status %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

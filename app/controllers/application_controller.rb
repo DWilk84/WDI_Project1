@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:error] = "Access denied."
+    redirect_to root_path
+  end
 
   helper_method :current_user
 
@@ -17,6 +21,8 @@ class ApplicationController < ActionController::Base
       @event_strips = Booking.event_strips_for_month(@shown_month)
     end
   end
+
+
 
   private
   def current_user

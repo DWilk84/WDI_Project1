@@ -12,20 +12,26 @@
     <th></th>
   </tr>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%= course.program.name %></td>
-    <td><%= course.code %></td>
-    <td><%= course.start_date %></td>
-    <td><%= course.end_date %></td>
-    <td><%= course.classroom.city %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.program.name %></td>
+      <td><%= course.code %></td>
+      <td><%= course.start_date %></td>
+      <td><%= course.end_date %></td>
+      <td><%= course.classroom.city %></td>
+      <td><%= link_to 'Show', course %></td>
+      <% if can? :update, Course %>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>        
+      <% end %>
+      <% if can? :destroy, Course  %>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <% end %>
+    </tr>
+  <% end %>
 </table>
 
 <br />
+<% if can? :create, Course %>
+  <%= link_to 'New Course', new_course_path %>  
+<% end %>
 
-<%= link_to 'New Course', new_course_path %>

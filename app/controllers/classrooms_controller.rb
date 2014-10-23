@@ -1,4 +1,7 @@
 class ClassroomsController < ApplicationController
+
+  authorize_resource
+  
   # GET /classrooms
   # GET /classrooms.json
   def index
@@ -20,6 +23,7 @@ class ClassroomsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @classroom }
     end
+    # authorize! :read, @classroom
   end
 
   # GET /classrooms/new
