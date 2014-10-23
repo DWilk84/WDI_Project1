@@ -1,22 +1,23 @@
-<h1>Listing courses</h1>
+<h1>Courses</h1>
+<div id="baccordion">
+  <% if can? :update, Course %>
 
-<% if can? :update, Course %>
+    <h3>Completed Courses:</h3>
+    <div>
+      <%= render 'courses_table', target: @completed_courses %>
+    </div>
 
-  <h3>Completed Courses:</h3>
+    <h3>Ongoing Courses:</h3>
+    <div>
+      <%= render 'courses_table', target: @ongoing_courses %>
+    </div>
+    
+  <% end %>
+
+  <h3>Upcoming Courses:</h3>
   <div>
-    <%= render 'courses_table', target: @completed_courses %>
+    <%= render 'courses_table', target: @upcoming_courses %>
   </div>
-
-  <h3>Ongoing Courses:</h3>
-  <div>
-    <%= render 'courses_table', target: @ongoing_courses %>
-  </div>
-  
-<% end %>
-
-<h3>Upcoming Courses:</h3>
-<div>
-  <%= render 'courses_table', target: @upcoming_courses %>
 </div>
 
 <br />

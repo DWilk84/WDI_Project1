@@ -33,9 +33,9 @@ class Course < ActiveRecord::Base
     find_by_sql(query)
   }
 
-  scope :upcoming_courses, Course.where("start_date > :start_date",  {start_date: DateTime.now})
-  scope :completed_courses, Course.where("end_date < :start_date",  {start_date: DateTime.now})
-  scope :ongoing_courses, Course.where("start_date < :start_date AND end_date > :start_date",  {start_date: DateTime.now})
+  scope :upcoming_courses, Course.where("start_date > :start_date",  {start_date: DateTime.now}).order("start_date, code")
+  scope :completed_courses, Course.where("end_date < :start_date",  {start_date: DateTime.now}).order("start_date, code")
+  scope :ongoing_courses, where("start_date < :start_date AND end_date > :start_date",  {start_date: DateTime.now}).order("start_date, code")
 
   def self.cities
     Course.all.map {|course| course.classroom.city}.uniq.sort

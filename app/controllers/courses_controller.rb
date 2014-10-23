@@ -47,7 +47,9 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+
     @course = Course.new(params[:course])
+    # binding.pry
     @course.color = @course.program.color
     @course.code = @course.course_code(@course)
 

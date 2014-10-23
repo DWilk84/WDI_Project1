@@ -11,11 +11,12 @@ gem 'event-calendar', :require => 'event_calendar'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancancan', '~> 1.9'
-
+gem 'carrierwave', '0.9.0'
+gem 'rmagick'
 
 group :development do
   gem 'letter_opener'
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -35,6 +36,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

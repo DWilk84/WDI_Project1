@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :password_confirmation, :course_ids, :role #role for seeding only!! hash out once seeded! 
+  attr_accessible :email, :password, :password_confirmation, :course_ids, :user_image, :role #role for seeding only!! hash out once seeded! 
 
   has_secure_password
 
@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :admissions
   has_many :courses, through: :admissions
+
+  mount_uploader :user_image, UserImageUploader
 
   def role?(role_to_compare)
     self.role.to_s == role_to_compare.to_s

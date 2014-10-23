@@ -11,5 +11,22 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+//initialize
+
+$(function () {
+  $( "#accordion" ).accordion({ active: 2 });
+
+  // getter
+  var active = $( "#accordion" ).accordion( "option", "active" );
+
+  // setter
+  $( "#accordion" ).accordion( "option", "active", 2 );
+});
+
+$(function() {
+  $('.datepicker').datepicker();
+});
