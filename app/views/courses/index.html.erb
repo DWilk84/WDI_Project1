@@ -1,4 +1,4 @@
-<h1 class="page_title">Courses</h1>
+<h1 class="page_title">Schedule of Courses</h1>
 <div class="page_content">
   <div id="accordion">
     <% if can? :update, Course %>
@@ -25,4 +25,5 @@
   <% if can? :create, Course %>
   <%= link_to 'New Course', new_course_path %>  
   <% end %>
+
 </div>
