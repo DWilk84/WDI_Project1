@@ -9,14 +9,6 @@
 </head>
 
 <body>
-  <div>
-    <% flash.each do |name, msg| %>
-    <div class="flash-message flash-message-<%= name %>">
-      <%= msg %>
-    </div>
-    <% end %>
-  </div>
-  
   <div id="user_nav">
     <div id="user_nav_left">
       <% if current_user %>
@@ -36,7 +28,6 @@
     </div>
   </div>
 
-
   <nav id="site_nav">
     <%= link_to "Home", root_path %>
     <%= link_to "Courses", courses_path if can? :read, Course %>
@@ -44,6 +35,15 @@
     <%= link_to "Classrooms", classrooms_path if can? :read, Classroom %>
     <%= link_to "Users", users_path if can? :read, User %>
   </nav>
+
+  <div>
+    <% flash.each do |name, msg| %>
+    <div class="flash-message flash-message-<%= name %>">
+      <%= msg %>
+    </div>
+    <% end %>
+  </div>
+
 
 
   <div id="yield_container">

@@ -1,30 +1,26 @@
+<h1 class="page_title"><%= @classroom.name %></h1>
+<div class="page_content">
+  <div id="classroom_detail">
+    <p>
+      <b>Capacity:</b>
+      <%= @classroom.capacity %>
+    </p>
 
-<p id="notice"><%= notice %></p>
+    <p>
+      <b>Country:</b>
+      <%= @classroom.country %>
+    </p>
+    <p>
+      <b>City:</b>
+      <%= @classroom.city %>
+    </p>
+    <% if can? :update, Classroom %>
+    <%= link_to 'Edit', edit_classroom_path(@classroom) %> |
+    <% end %>
+    <%= link_to 'Back', classrooms_path %>
+  </div>
 
-<p>
-  <b>Name:</b>
-  <%= @classroom.name %>
-</p>
-
-<p>
-  <b>Capacity:</b>
-  <%= @classroom.capacity %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @classroom.country %>
-</p>
-<p>
-  <b>City:</b>
-  <%= @classroom.city %>
-</p>
-
-<div id="calendar_container">
-  <h1>Calendar</h1>
-  <%= raw(event_calendar) %>
+  <div id="calendar_container">
+    <%= raw(event_calendar) %>
+  </div>
 </div>
-<% if can? :update, Classroom %>
-  <%= link_to 'Edit', edit_classroom_path(@classroom) %> |
-<% end %>
-<%= link_to 'Back', classrooms_path %>

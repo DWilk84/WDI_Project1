@@ -21,8 +21,8 @@ class Course < ActiveRecord::Base
 
   # this one does work!
   scope :overlapping, lambda { |course|
-    s = course.start_date
-    e = course.end_date
+    s = course['start_date']
+    e = course['end_date']
     query = <<-SQL
     SELECT DISTINCT "courses".* FROM "courses"
     WHERE (end_date BETWEEN '#{s}' AND '#{e}')

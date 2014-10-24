@@ -1,37 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="page_content">
+  <p>
+    <b>Program:</b>
+    <%= @course.program.name %>
+  </p>
 
-<p>
-  <b>Program:</b>
-  <%= @course.program.name %>
-</p>
+  <p>
+    <b>Course code:</b>
+    <%= @course.code %>
+  </p>
 
-<p>
-  <b>Course code:</b>
-  <%= @course.code %>
-</p>
+  <p>
+    <b>Start date:</b>
+    <%= @course.start_date %>
+  </p>
 
-<p>
-  <b>Start date:</b>
-  <%= @course.start_date %>
-</p>
+  <p>
+    <b>End date:</b>
+    <%= @course.end_date %>
+  </p>
 
-<p>
-  <b>End date:</b>
-  <%= @course.end_date %>
-</p>
+  <p>
+    <b>City:</b>
+    <%= @course.classroom.city %>
+  </p>
 
-<p>
-  <b>City:</b>
-  <%= @course.classroom.city %>
-</p>
-
-<% if can? :create, Admission %>
+  <% if can? :create, Admission %>
   <!-- course application button -->
   <%= render 'shared/admissions_form' %>  
-<% end %>
+  <% end %>
 
 
-<% if can? :update, Admission %>
+  <% if can? :update, Admission %>
   <!-- the following to be seen by admins only  -->
   <p>
     <b>Max number of course participants:</b>
@@ -41,12 +40,13 @@
   <p>
     <b>Applicants:</b>
     <% @course.admissions.each do |admission| %>
-      <li><%= "#{admission.user.email}, status: #{admission.status} " %></li>
+    <li><%= "#{admission.user.email}, status: #{admission.status} " %></li>
     <% end %>
   </p>
-<% end %>
+  <% end %>
 
-<% if can? :update, Course %>
+  <% if can? :update, Course %>
   <%= link_to 'Edit', edit_course_path(@course) %> |  
-<% end %>
-<%= link_to 'Back', courses_path %>
+  <% end %>
+  <%= link_to 'Back', courses_path %>
+</div>

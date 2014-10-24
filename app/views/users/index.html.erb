@@ -1,29 +1,28 @@
-<h1>Listing users</h1>
+<h1 class="page_title">Listing users</h1>
+<div class="page_content">
+  <table>
+    <tr>
+      <th>Email</th>
 
-<table>
-  <tr>
-    <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.email %></td>
+      <td><%= link_to 'Show', user %></td>
 
-    <td><%= link_to 'Show', user %></td>
-
-    <% if can? :update, User %>
+      <% if can? :update, User %>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <% end %>
-    <% if can? :manage, User %>
+      <% end %>
+      <% if can? :manage, User %>
       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <% end %>
+
+    </tr>
     <% end %>
-
-  </tr>
-<% end %>
-</table>
-
-<br />
+  </table>
+</div>

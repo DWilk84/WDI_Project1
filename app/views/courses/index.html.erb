@@ -1,6 +1,7 @@
-<h1>Courses</h1>
-<div id="baccordion">
-  <% if can? :update, Course %>
+<h1 class="page_title">Courses</h1>
+<div class="page_content">
+  <div id="accordion">
+    <% if can? :update, Course %>
 
     <h3>Completed Courses:</h3>
     <div>
@@ -12,16 +13,16 @@
       <%= render 'courses_table', target: @ongoing_courses %>
     </div>
     
-  <% end %>
+    <% end %>
 
-  <h3>Upcoming Courses:</h3>
-  <div>
-    <%= render 'courses_table', target: @upcoming_courses %>
+    <h3>Upcoming Courses:</h3>
+    <div>
+      <%= render 'courses_table', target: @upcoming_courses %>
+    </div>
   </div>
-</div>
 
-<br />
-<% if can? :create, Course %>
+  <br />
+  <% if can? :create, Course %>
   <%= link_to 'New Course', new_course_path %>  
-<% end %>
-
+  <% end %>
+</div>

@@ -31,6 +31,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   # GET /courses/new.json
   def new
+    # binding.pry
     @course = Course.new
 
     respond_to do |format|
@@ -47,24 +48,31 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
+    if Course.overlapping(params[:course]).any?
+      flash[:error] = "Room is booked during proposed dates"
 
-    @course = Course.new(params[:course])
-    # binding.pry
-    @course.color = @course.program.color
-    @course.code = @course.course_code(@course)
+      redirect_to new_course_path
+    else
+      @course = Course.new(params[:course])
+      @course.color = @course.program.color
+      @course.code = @course.course_code(@course)
 
-    respond_to do |format|
-      if @course.save
+      respond_to do |format|
+        if @course.save
 
-        @course.booking = Booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color)
+          @course.booking = Booking.create(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color)
 
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render json: @course, status: :created, location: @course }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+          format.html { redirect_to @course, notice: 'Course was successfully created!' }
+          format.json { render json: @course, status: :created, location: @course }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @course.errors, status: :unprocessable_entity }
+        end
       end
     end
+    
+
+
   end
 
   # PUT /courses/1
@@ -75,18 +83,19 @@ class CoursesController < ApplicationController
     @course.code = @course.course_code(@course)
 
     respond_to do |format|
+      binding.pry
       if @course.update_attributes(params[:course])
 
        @course.booking.update_attributes(name: @course.code, classroom_id: @course.classroom.id, course_id: @course.id, start_at: @course.start_date, end_at: @course.end_date, color: @course.color)
 
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+       format.html { redirect_to @course, notice: 'Course was successfully updated!' }
+       format.json { head :no_content }
+     else
+      format.html { render action: "edit" }
+      format.json { render json: @course.errors, status: :unprocessable_entity }
     end
   end
+end
 
   # DELETE /courses/1
   # DELETE /courses/1.json

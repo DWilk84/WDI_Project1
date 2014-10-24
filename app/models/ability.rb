@@ -13,20 +13,20 @@ class Ability
       can :create, Admission
       can :read, Admission
       can :update, Admission
-      can :read, :user, id: user.id 
-      can :update, :user, id: user.id 
+      can :read, User, id: user.id 
+      can :update, User, id: user.id 
     elsif user.role? :instructor
       can :read, Program
       can :read, Course
       can :read, Classroom
-      can :read, :user, id: user.id 
-      can :update, :user, id: user.id 
+      can :read, User, id: user.id 
+      can :update, User, id: user.id 
     elsif user.role? :customer
       can :read, Program
       can :read, Course
       can :create, Admission
-      can :read, :user, id: user.id
-      can :update, :user, id: user.id
+      can :read, User, id: user.id
+      can :update, User, id: user.id
     else
       can :read, Course
       can :read, Program

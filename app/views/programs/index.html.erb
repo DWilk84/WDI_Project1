@@ -1,31 +1,31 @@
-<h1>Listing programs</h1>
+<h1 class="page_title">Listing programs</h1>
+<div class="page_content">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Code</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-  <% @programs.each do |program| %>
+    <% @programs.each do |program| %>
     <tr>
       <td><%= program.name %></td>
       <td><%= program.code %></td>
       <td><%= link_to 'Show', program %></td>
       <% if can? :update, Program %>
-        <td><%= link_to 'Edit', edit_program_path(program) %></td>  
+      <td><%= link_to 'Edit', edit_program_path(program) %></td>  
       <% end %>
       <% if can? :destroy, Program %>
-        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
       <% end %>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
 
-<br />
-<% if can? :create, Program %>
+  <br />
+  <% if can? :create, Program %>
   <%= link_to 'New Program', new_program_path %>  
-<% end %>
-
+  <% end %>
+</div>

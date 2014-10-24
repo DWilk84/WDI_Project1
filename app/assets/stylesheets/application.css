@@ -15,6 +15,13 @@
  *= require jquery-ui
  */
 
+ body{
+  width: 95%;
+  margin: 10px auto 50px auto;
+  padding-bottom: 50px;
+  /*background-image: url("GA_logo.jpg");*/
+}
+
 .flash-message{
   height: 30px;
   line-height: 30px;
@@ -113,7 +120,60 @@ a{
   background-color: #000000;
 }
 
+#user_thumb{
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: 3px;
+}
 
+
+#site_nav{
+  height: 60px;
+  background-color: black;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #8B0000;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#site_nav a{
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 5px;
+  line-height: 60px;
+}
+
+/* unvisited link */
+#site_nav a:link {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+/* visited link */
+#site_nav a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
+
+/* mouse over link */
+#site_nav a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #8B0000;
+}
+
+/* selected link */
+#site_nav a:active {
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #000000;
+}
 
 #user_thumb{
   border: 1px solid black;
@@ -121,6 +181,29 @@ a{
   margin: 3px;
 }
 
-#calendar_container{
-  width: 50%;
+#yield_container{
+  width: 90%;
+  margin: 0 auto;
+  min-height: 500px;
+  box-shadow: 1px 1px 20px 0px darkred;
+  border-radius: 30px;
+  margin-top: 10px;
+  padding: 10px 20px 10px 30px;
 }
+
+/* inside the yield          */
+#classroom_detail{
+  width: 50%;
+  display: inline-block;
+}
+
+#calendar_container{
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.hidden_course_select{
+  display: none;
+}
+

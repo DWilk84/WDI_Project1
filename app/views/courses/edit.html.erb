@@ -1,10 +1,12 @@
-<h1>Editing course</h1>
-<p>
-  <b>Course code:</b>
-  <%= @course.code %>
-</p>
+<h1 class="page_title">Editing course</h1>
+<div class="page_content">
+  <p>
+    <b>Course code:</b>
+    <%= @course.code %>
+  </p>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+  <%= link_to 'Show', @course %> |
+  <%= link_to 'Back', courses_path %>
+</div>

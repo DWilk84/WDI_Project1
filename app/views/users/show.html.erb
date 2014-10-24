@@ -1,33 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="page_content">
+  <p>
+    <%= link_to image_tag(@user.user_image.profile.url) %>
+  </p>
 
-<p>
-  <%= link_to image_tag(@user.user_image.profile.url) %>
-</p>
+  <p>
+    <b>Email:</b>
+    <%= @user.email %>
+  </p>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+  <p>
+    <b>Role:</b>
+    <%= @user.role %>
+  </p>
 
-<p>
-  <b>Role:</b>
-  <%= @user.role %>
-</p>
-
-<table>
-  <tr>
-    <th>Courses</th>
-    <th>Status</th>
-  </tr>
-  <% @user.admissions.each do |admission| %>
-  <tr>
-    <td><%= admission.course.code %></td>
-    <td><%= admission.status %></td>
-  </tr>
-  <% end %>
-</table>
-
+  <table>
+    <tr>
+      <th>Courses</th>
+      <th>Status</th>
+    </tr>
+    <% @user.admissions.each do |admission| %>
+    <tr>
+      <td><%= admission.course.code %></td>
+      <td><%= admission.status %></td>
+    </tr>
+    <% end %>
+  </table>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>
