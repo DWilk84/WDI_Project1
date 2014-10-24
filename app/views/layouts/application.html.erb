@@ -6,13 +6,14 @@
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "event_calendar" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   <div id="user_nav">
     <div id="user_nav_left">
       <% if current_user %>
-
       <%= image_tag(current_user.user_image.thumb.url, id: "user_thumb") %>
       <p>Logged in as: <%= current_user.email %></p>
       <% end %>

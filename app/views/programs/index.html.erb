@@ -1,32 +1,26 @@
 <h1 class="page_title">All programs</h1>
 <div class="page_content">
   <p>At GA we take great pride in Art party pariatur Tonx drinking vinegar, aliqua bespoke sunt semiotics non  jean shorts do McSweeney's sriracha tilde selfies.  Scenester viral Cosby sweater, you probably haven't heard of them +1 twee banjo nostrud nulla  flexitarian kitsch ut.  Assumenda accusamus sustainable, iPhone culpa  trust fund Wes Anderson yr American Apparel pour-over artisan tousled placeat wayfarers.  Austin umami post-ironic Intelligentsia nostrud cillum.  XOXO Godard eiusmod, adipisicing Austin jean shorts art party fugiat  scenester qui  3 wolf moon fingerstache.  Pug Carles aute  cold-pressed crucifix.  Pariatur sed cillum, mustache readymade American Apparel authentic cred deserunt  Kickstarter proident.</p>
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Code</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
+  <br>
+  <br>
+  <div id="accordion">
     <% @programs.each do |program| %>
-    <tr>
-      <td><%= program.name %></td>
-      <td><%= program.code %></td>
-      <td><%= link_to 'Show', program %></td>
+    
+    <h3><%= program.name %> (<%= program.code %>)</h3>
+    <div>
+      <p>The <%= program.name %> Course is Bushwick odio American Apparel sartorial actually typewriter quinoa, Wes Anderson kitsch assumenda.  Photo booth selvage Brooklyn mumblecore, sed cupidatat  Intelligentsia swag.  Laborum retro shabby chic assumenda post-ironic delectus.  Polaroid sustainable Austin farm-to-table disrupt Banksy.  Ennui fixie Brooklyn Shoreditch 3 wolf moon.</p><br>
+      <%= link_to 'More detail', program %>
       <% if can? :update, Program %>
-      <td><%= link_to 'Edit', edit_program_path(program) %></td>  
+      <%= link_to 'Edit', edit_program_path(program) %>  
       <% end %>
       <% if can? :destroy, Program %>
-      <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      <%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %>  
       <% end %>
-    </tr>
+    </div>
     <% end %>
-  </table>
-
+  </div>
   <br />
+
   <% if can? :create, Program %>
   <%= link_to 'New Program', new_program_path %>  
   <% end %>

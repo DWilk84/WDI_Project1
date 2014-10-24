@@ -19,7 +19,11 @@
   width: 95%;
   margin: 10px auto 50px auto;
   padding-bottom: 50px;
-  /*background-image: url("GA_logo.jpg");*/
+}
+
+h1{
+  /*font-family: 'Fredoka One', cursive;*/
+  font-family: 'Arvo', serif;
 }
 
 #home_logo{
@@ -200,19 +204,48 @@ a{
   padding: 10px 20px 10px 30px;
 }
 
+.page_content{
+  min-height: 500px;
+  width: 90%;
+  margin: 0 auto;
+}
 /* inside the yield          */
 #classroom_detail{
+  min-height: 500px;
   width: 50%;
   display: inline-block;
 }
 
 #calendar_container{
+  min-height: 500px;
   width: 45%;
   display: inline-block;
   vertical-align: top;
 }
+#home_left{
+  width: 50%;
+  min-height: 500px;
+  min-width: 500px;
+  display: inline-block;
+  background-image: url('Gerry.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: 200px;*/
+}
+#home_image{
+  min-height: 500px;
+  /*background-size: 200px;*/
+}
 
+#home_right{
+  min-height: 500px;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
 .hidden_course_select{
   display: none;
 }
-
+.courses_table th:first-child{
+  width: 400px;
+}

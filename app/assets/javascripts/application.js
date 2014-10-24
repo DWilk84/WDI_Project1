@@ -18,22 +18,19 @@
 //initialize
 
 $(function () {
-  $( "#accordion" ).accordion({ active: 2 });
+  $( "#accordion" ).accordion({ collapsible: true });
 
   // getter
-  var active = $( "#accordion" ).accordion( "option", "active" );
+  var active = $( "#accordion" ).accordion( "option", "collapsible" );
 
   // setter
-  $( "#accordion" ).accordion( "option", "active", 2 );
+  $( "#accordion" ).accordion( "option", "collapsible", true );
 });
 
 $(function() {
   $('.datepicker').datepicker({ dateFormat: "yy-mm-dd" });
 });
 
-// $( document ).click(function() {
-//   $( "#home_logo" ).toggle( "explode" );
-//   // function() {
-//   //   window.location = "home_path";
-//   // };
-// });
+$( document ).click(function() {
+  $( "#home_image" ).toggle( "explode" );
+});
