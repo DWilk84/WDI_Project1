@@ -31,6 +31,6 @@ $(function() {
   $('.datepicker').datepicker({ dateFormat: "yy-mm-dd" });
 });
 
-$( document ).click(function() {
-  $( "#home_image" ).toggle( "explode" );
-});
+// $( document ).click(function() {
+//   $( "#home_image" ).toggle( "explode" );
+// });

@@ -1,0 +1,28 @@
+%h1.page_title Classrooms
+.page_content
+  #classroom_detail
+    %table
+      %tr
+        %th Name
+        %th Capacity
+        %th Country
+        %th City
+        %th
+        %th
+        %th
+      - @classrooms.each do |classroom|
+        %tr
+          %td= classroom.name
+          %td= classroom.capacity
+          %td= classroom.country
+          %td= classroom.city
+          %td= link_to 'Show', classroom
+          - if can? :update, Classroom
+            %td= link_to 'Edit', edit_classroom_path(classroom)
+          - if can? :destroy, Classroom
+            %td= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' }
+    %br/
+    - if can? :create, Classroom
+      = link_to 'New Classroom', new_classroom_path
+  #calendar_container
+    = raw(event_calendar)

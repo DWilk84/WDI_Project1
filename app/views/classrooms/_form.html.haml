@@ -1,0 +1,16 @@
+= form_for(@classroom) do |f|
+  = render "shared/error_messages", target: @classroom
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city, placeholder: "e.g. London"
+  .field
+    = f.label :country
+    %br/
+    = f.text_field :country, placeholder: "e.g. England"
+  .field
+    = f.label :capacity
+    %br/
+    = f.number_field :capacity, min: 0
+  .actions
+    = f.submit

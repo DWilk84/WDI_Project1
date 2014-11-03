@@ -1,0 +1,18 @@
+%h1.page_title= @classroom.name
+.page_content
+  #classroom_detail
+    %p
+      %b Capacity:
+      = @classroom.capacity
+    %p
+      %b Country:
+      = @classroom.country
+    %p
+      %b City:
+      = @classroom.city
+    - if can? :update, Classroom
+      = link_to 'Edit', edit_classroom_path(@classroom)
+      |
+    = link_to 'Back', classrooms_path
+  #calendar_container
+    = raw(event_calendar)

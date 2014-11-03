@@ -1,0 +1,227 @@
+body{
+  width: 95%;
+  margin: 10px auto 50px auto;
+  padding-bottom: 50px;
+
+  h1{
+    font-family: 'Arvo', serif;
+  }
+
+  .flash-message{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+    &.flash-message-notice{
+      background-color: #ADFFAD;
+      color: #79B279;
+    }
+
+    &.flash-message-error{
+      background-color: #FF9494;
+      color: #E62E2E;
+    }
+    &.flash-message-alert{
+      background-color: #FF9494;
+      color: #E62E2E;
+    }
+  }
+
+  a{
+    text-decoration: none;
+    -webkit-transition: background-color 0.5s linear 0s;
+  }
+
+  #user_nav{
+    height: 60px;
+    background-color: black;
+    margin: 0 auto;
+    color: white;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    a{
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+
+      &:link {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+
+      &:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+
+      &:hover {
+        color: #000000;
+        text-decoration: none;
+        background-color: #FFFFFF;
+      }
+
+      &:active {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+    }
+
+    #user_nav_left{
+      height: 58px;
+      width: 47%;
+      display: inline-block;
+      text-align: left;
+      line-height: 60px;
+      vertical-align: top;
+
+      p{
+        width: 50%;
+        display: inline-block;
+        text-align: left;
+        line-height: 60px;
+        margin: 0 auto;
+        vertical-align: top
+      }
+
+      #user_thumb{
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 3px;
+      }
+    }
+
+    #user_nav_right{
+      height: 58px;
+      width: 47%;
+      display: inline-block;
+      text-align: right;
+      line-height: 60px;
+      vertical-align: top;
+    }
+  }
+
+  #site_nav{
+    height: 60px;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid #8B0000;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    a{
+      padding-left: 30px;
+      padding-right: 30px;
+      border-radius: 5px;
+      line-height: 60px;
+
+      &:link {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+
+      &:visited {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+
+      &:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #8B0000;
+      }
+
+      &:active {
+        color: #FFFFFF;
+        text-decoration: none;
+        background-color: #000000;
+      }
+    }
+  }
+
+  #yield_container{
+    width: 90%;
+    margin: 0 auto;
+    min-height: 500px;
+    box-shadow: 1px 1px 20px 0px darkred;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 10px 20px 10px 30px;
+
+    .page_title{
+      font-size: 30px;
+      line-height: 30px;
+    }
+
+    .page_content{
+      min-height: 500px;
+      width: 90%;
+      margin: 0 auto;
+
+      #classroom_detail{
+        min-height: 500px;
+        width: 50%;
+        display: inline-block;
+      }
+
+      #calendar_container{
+        min-height: 500px;
+        width: 45%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .hidden_course_select{
+        display: none;
+      }
+
+      .courses_table th:first-child{
+        width: 400px;
+      }
+    }
+
+    #home_left{
+      width: 50%;
+      min-height: 500px;
+      min-width: 500px;
+      display: inline-block;
+      background-image: url('Gerry.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      
+      #home_image{
+        min-height: 500px;
+        
+        #home_logo{
+          width: 400px;
+        }
+      }
+    }
+
+    #home_right{
+      min-height: 500px;
+      width: 45%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+
+
+
+
+
+

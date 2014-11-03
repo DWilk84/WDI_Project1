@@ -1,0 +1,44 @@
+!!! 5
+%html
+  %head
+    %title ScheduleApp
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "event_calendar"
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Fredoka+One", :rel => "stylesheet", :type => "text/css"}/
+    / %link{href: "http://fonts.googleapis.com/css?family=Arvo:400,700" rel: "stylesheet" type: "text/css"}/
+
+  %body
+    #user_nav
+      #user_nav_left
+        - if current_user
+          = image_tag(current_user.user_image.thumb.url, id: "user_thumb")
+          %p
+            Logged in as: #{current_user.email}
+      #user_nav_right
+        - if current_user
+          = link_to "Log out", log_out_path
+          = link_to "Profile page", user_path(current_user)
+        - else
+          = link_to "Sign up", sign_up_path
+          = link_to "Log in", log_in_path
+
+    %nav#site_nav
+      = link_to "Home", root_path
+      = link_to "Programs", programs_path if can? :read, Program
+      = link_to "Courses Schedule", courses_path if can? :read, Course
+      = link_to "Classrooms", classrooms_path if can? :read, Classroom
+      = link_to "Users", users_path if can? :read, User
+    
+    %div
+      - flash.each do |name, msg|
+        %div{:class => "flash-message flash-message-#{name}"}
+          = msg
+
+    #yield_container
+      = yield
+    
+
+  
+
